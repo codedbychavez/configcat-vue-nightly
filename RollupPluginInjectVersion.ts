@@ -1,12 +1,12 @@
-const packageJson = require('./package.json');
+const packageJson = require("./package.json");
 
 export default function () {
   return {
-    name: 'inject-version',
+    name: "inject-version",
     transform(code, id) {
-      id = id.replace('\\', '/').toLowerCase();
-      if (id.endsWith('src/plugins/version.js')) {
-        return code.replace('CONFIGCAT_SDK_VERSION', packageJson.version);
+      id = id.replace("\\", "/").toLowerCase();
+      if (id.endsWith("src/plugins/version.ts")) {
+        return code.replace("CONFIGCAT_SDK_VERSION", packageJson.version);
       }
 
       return null;

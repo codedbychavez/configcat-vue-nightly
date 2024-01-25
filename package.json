@@ -1,35 +1,41 @@
 {
-  "name": "configcat-vue-ts",
+  "name": "configcat-vue-nightly",
+  "description": "A simple and easy to use Vue3 plugin for using ConfigCat Feature Flags in your Vue.js Application",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/configcat-vue-ts.umd.cjs",
-  "module": "./dist/config-vue-ts.js",
+  "main": "./dist/configcat-vue.umd.cjs",
+  "module": "./dist/configcat-vue.js",
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/configcat-vue-ts.js",
+        "default": "./dist/configcat-vue.js",
         "types": "./dist/index.d.ts"
       },
       "require": {
-        "default": "./dist/configcat-vue-ts.umd.cjs",
+        "default": "./dist/configcat-vue.umd.cjs",
         "types": "./dist/index.d.ts"
       }
     }
   },
-  "version": "1.0.0",
-  "description": "A simple and easy to use Vue3 plugin for using ConfigCat Feature Flags in your Vue.js Application",
+  "version": "2.2.2",
   "keywords": [
     "configcat",
-    "feature-flags",
-    "feature-toggle",
-    "feature-management",
-    "feature-flag",
+    "ConfigCat",
     "configcat vue",
     "configcat vue3",
+    "feature-flags",
+    "feature flags",
+    "feature-toggle",
+    "feature toggle",
+    "feature-management",
+    "feature management",
+    "feature-flag",
+    "feature flag",
     "feature flags vue",
-    "vite plugin"
+    "vue3 feature flags",
+    "vite-plugin-vue-configcat"
   ],
   "author": "Chavez Harris",
   "private": false,
@@ -37,15 +43,24 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.6",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "configcat-common": "^8.2.0",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "@vue/test-utils": "^2.4.3",
+    "happy-dom": "^13.2.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-dts": "^3.6.0",
+    "vitest": "^1.2.1",
     "vue-tsc": "^1.8.5"
+  },
+  "dependencies": {
+    "configcat-common": "9.2.0"
   }
 }
