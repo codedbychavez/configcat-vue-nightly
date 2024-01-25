@@ -1,15 +1,17 @@
-import FeatureWrapper from './components/FeatureWrapper.vue';
-import ConfigCatPlugin from './plugins/ConfigCatPlugin';
+export {
+  default as ConfigCatPlugin,
+  type PluginOptions as ConfigCatPluginOptions
+} from './plugins/ConfigCatPlugin';
 
-import {
-  SettingValue,
-  FlagOverrides,
-  MapOverrideDataSource,
-  OverrideBehaviour,
+export { default as FeatureWrapper } from './components/FeatureWrapper.vue';
+
+export {
   createConsoleLogger,
+  createFlagOverridesFromMap
 } from "configcat-common";
 
 // These exports should be kept in sync with the exports listed in the section "Public types for end users" of common-js/src/index.ts!
+
 export type {
   IOptions,
   IAutoPollOptions,
@@ -20,36 +22,45 @@ export type {
   LogMessage,
   IConfigCatCache,
   IConfig,
+  ISegment,
+  SettingTypeMap,
+  SettingValue,
+  VariationIdValue,
+  ISettingValueContainer,
+  ISettingUnion,
   ISetting,
   ITargetingRule,
   IPercentageOption,
-  SettingValue,
-  VariationIdValue,
+  ConditionTypeMap,
+  IConditionUnion,
+  ICondition,
+  UserConditionComparisonValueTypeMap,
+  IUserConditionUnion,
+  IUserCondition,
+  IPrerequisiteFlagCondition,
+  ISegmentCondition,
   IConfigCatClient,
   IConfigCatClientSnapshot,
   IEvaluationDetails,
   SettingTypeOf,
+  UserAttributeValue,
   FlagOverrides,
   IProvidesHooks,
-  HookEvents,
+  HookEvents
 } from "configcat-common";
 
-export { 
+export {
   PollingMode,
   DataGovernance,
   LogLevel,
   FormattableLogMessage,
   SettingType,
-  Comparator,
+  UserComparator,
+  PrerequisiteFlagComparator,
+  SegmentComparator,
   SettingKeyValue,
   User,
   OverrideBehaviour,
+  ClientCacheState,
   RefreshResult,
-  ClientReadyState,
- } from "configcat-common";
-
- export function createFlagOverridesFromMap(map: { [name: string]: NonNullable<SettingValue>; }, behaviour: OverrideBehaviour) {
-  return new FlagOverrides(new MapOverrideDataSource(map), behaviour);
-}
-
-export { FeatureWrapper, ConfigCatPlugin, createConsoleLogger };
+} from "configcat-common";
