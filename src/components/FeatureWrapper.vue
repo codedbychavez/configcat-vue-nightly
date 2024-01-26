@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent } from "vue";
 import { User } from "configcat-common";
-import { useFeatureFlag } from "../composables/useFeatureFlag"
+import { useFeatureFlag } from "../composables/useFeatureFlag";
 
 export default defineComponent({
   setup(props) {
