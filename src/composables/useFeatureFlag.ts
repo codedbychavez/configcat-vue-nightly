@@ -1,5 +1,5 @@
 import { ref, onUnmounted, onBeforeMount } from "vue";
-import { useConfigCatClient } from "./UseConfigCatClient";
+import { useConfigCatClient } from "./useConfigCatClient";
 // Types
 import { ClientCacheState, type User } from "configcat-common";
 import type { Ref } from "vue";

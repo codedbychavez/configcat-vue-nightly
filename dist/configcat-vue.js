@@ -1,4 +1,4 @@
-import { defineComponent as Ut, ref as Mt, inject as xt, onBeforeMount as Wt, onUnmounted as Vt, renderSlot as pe } from "vue";
+import { inject as Ut, ref as Mt, onBeforeMount as xt, onUnmounted as Wt, defineComponent as Vt, renderSlot as pe } from "vue";
 var Oe = function(t, e) {
   return Oe = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(r, n) {
     r.__proto__ = n;
@@ -279,7 +279,7 @@ var D = (
     }
     return t;
   }()
-), Ie = (
+), Ce = (
   /** @class */
   function() {
     function t(e, r) {
@@ -307,7 +307,7 @@ var D = (
         v: r
       });
     }, e;
-  }(Ie)
+  }(Ce)
 ), _t = (
   /** @class */
   function() {
@@ -317,7 +317,7 @@ var D = (
         return s.u != null ? new yt(s.u) : s.p != null ? new Ht(s.p) : s.s != null ? new Kt(s.s, r) : void 0;
       })) !== null && i !== void 0 ? i : [], this.then = e.p != null ? e.p.map(function(s) {
         return new pt(s);
-      }) : new Ie(e.s);
+      }) : new Ce(e.s);
     }
     return t;
   }()
@@ -330,7 +330,7 @@ var D = (
       return n.percentage = r.p, n;
     }
     return e;
-  }(Ie)
+  }(Ce)
 ), yt = (
   /** @class */
   function() {
@@ -382,15 +382,15 @@ var ue = (
       return new t(e, r);
     }, t;
   }()
-), C;
+), w;
 (function(t) {
   t[t.NoFlagData = 0] = "NoFlagData", t[t.HasLocalOverrideFlagDataOnly = 1] = "HasLocalOverrideFlagDataOnly", t[t.HasCachedFlagDataOnly = 2] = "HasCachedFlagDataOnly", t[t.HasUpToDateFlagData = 3] = "HasUpToDateFlagData";
-})(C || (C = {}));
+})(w || (w = {}));
 var L;
 (function(t) {
   t[t.Online = 0] = "Online", t[t.Offline = 1] = "Offline", t[t.Disposed = 2] = "Disposed";
 })(L || (L = {}));
-var we = (
+var Ie = (
   /** @class */
   function() {
     function t(e, r) {
@@ -594,7 +594,7 @@ function Gt(t) {
   var e;
   return typeof ((e = t) === null || e === void 0 ? void 0 : e.then) == "function";
 }
-function Ce(t, e, r, n) {
+function we(t, e, r, n) {
   e === void 0 && (e = 0), n === void 0 && (n = ", ");
   var i = t.length;
   if (!i)
@@ -760,9 +760,9 @@ var Jt = (
         });
       });
     }, e.prototype.getCacheState = function(r) {
-      return r.isEmpty ? C.NoFlagData : r.isExpired(this.pollIntervalMs) ? C.HasCachedFlagDataOnly : C.HasUpToDateFlagData;
+      return r.isEmpty ? w.NoFlagData : r.isExpired(this.pollIntervalMs) ? w.HasCachedFlagDataOnly : w.HasUpToDateFlagData;
     }, e;
-  }(we)
+  }(Ie)
 ), Yt = (
   /** @class */
   function() {
@@ -1099,28 +1099,28 @@ function bt(t) {
   }
   var r, n, i, s = new Array(80), o = 1732584193, a = 4023233417, u = 2562383102, l = 271733878, f = 3285377520, h, g, v, d, y, A;
   t = X(t);
-  var I = t.length, w = new Array();
-  for (n = 0; n < I - 3; n += 4)
-    i = t.charCodeAt(n) << 24 | t.charCodeAt(n + 1) << 16 | t.charCodeAt(n + 2) << 8 | t.charCodeAt(n + 3), w.push(i);
-  switch (I % 4) {
+  var C = t.length, I = new Array();
+  for (n = 0; n < C - 3; n += 4)
+    i = t.charCodeAt(n) << 24 | t.charCodeAt(n + 1) << 16 | t.charCodeAt(n + 2) << 8 | t.charCodeAt(n + 3), I.push(i);
+  switch (C % 4) {
     case 0:
       n = 2147483648;
       break;
     case 1:
-      n = t.charCodeAt(I - 1) << 24 | 8388608;
+      n = t.charCodeAt(C - 1) << 24 | 8388608;
       break;
     case 2:
-      n = t.charCodeAt(I - 2) << 24 | t.charCodeAt(I - 1) << 16 | 32768;
+      n = t.charCodeAt(C - 2) << 24 | t.charCodeAt(C - 1) << 16 | 32768;
       break;
     case 3:
-      n = t.charCodeAt(I - 3) << 24 | t.charCodeAt(I - 2) << 16 | t.charCodeAt(I - 1) << 8 | 128;
+      n = t.charCodeAt(C - 3) << 24 | t.charCodeAt(C - 2) << 16 | t.charCodeAt(C - 1) << 8 | 128;
       break;
   }
-  for (w.push(n); w.length % 16 != 14; )
-    w.push(0);
-  for (w.push(I >>> 29), w.push(I << 3 & 4294967295), r = 0; r < w.length; r += 16) {
+  for (I.push(n); I.length % 16 != 14; )
+    I.push(0);
+  for (I.push(C >>> 29), I.push(C << 3 & 4294967295), r = 0; r < I.length; r += 16) {
     for (n = 0; n < 16; n++)
-      s[n] = w[r + n];
+      s[n] = I[r + n];
     for (n = 16; n <= 79; n++)
       s[n] = e(s[n - 3] ^ s[n - 8] ^ s[n - 14] ^ s[n - 16], 1);
     for (h = o, g = a, v = u, d = l, y = f, n = 0; n <= 19; n++)
@@ -1133,7 +1133,7 @@ function bt(t) {
       A = e(h, 5) + (g ^ v ^ d) + y + s[n] + 3395469782 & 4294967295, y = d, d = v, v = e(g, 30), g = h, h = A;
     o = o + h & 4294967295, a = a + g & 4294967295, u = u + v & 4294967295, l = l + d & 4294967295, f = f + y & 4294967295;
   }
-  return It([o, a, u, l, f]);
+  return Ct([o, a, u, l, f]);
 }
 function Tt(t) {
   function e(Pe, qe) {
@@ -1159,15 +1159,15 @@ function Tt(t) {
   for (d[d[r]] = v / i | 0, d[d[r]] = v, o = 0; o < d[r]; ) {
     var y = d.slice(o, o += 16), A = u;
     for (u = u.slice(0, 8), s = 0; s < 64; s++) {
-      var I = y[s - 15], w = y[s - 2], U = u[0], M = u[4], te = u[7] + (e(M, 6) ^ e(M, 11) ^ e(M, 25)) + (M & u[5] ^ ~M & u[6]) + l[s] + (y[s] = s < 16 ? y[s] : y[s - 16] + (e(I, 7) ^ e(I, 18) ^ I >>> 3) + y[s - 7] + (e(w, 17) ^ e(w, 19) ^ w >>> 10) | 0), qt = (e(U, 2) ^ e(U, 13) ^ e(U, 22)) + (U & u[1] ^ U & u[2] ^ u[1] & u[2]);
+      var C = y[s - 15], I = y[s - 2], U = u[0], M = u[4], te = u[7] + (e(M, 6) ^ e(M, 11) ^ e(M, 25)) + (M & u[5] ^ ~M & u[6]) + l[s] + (y[s] = s < 16 ? y[s] : y[s - 16] + (e(C, 7) ^ e(C, 18) ^ C >>> 3) + y[s - 7] + (e(I, 17) ^ e(I, 19) ^ I >>> 10) | 0), qt = (e(U, 2) ^ e(U, 13) ^ e(U, 22)) + (U & u[1] ^ U & u[2] ^ u[1] & u[2]);
       u = [te + qt | 0].concat(u), u[4] = u[4] + te | 0;
     }
     for (s = 0; s < 8; s++)
       u[s] = u[s] + A[s] | 0;
   }
-  return It(u, 8);
+  return Ct(u, 8);
 }
-function It(t, e) {
+function Ct(t, e) {
   var r = "0123456789abcdef", n = "";
   e ?? (e = t.length);
   for (var i = 0; i < e; i++)
@@ -1240,7 +1240,7 @@ function tr(t) {
     throw new TypeError("Object.fromEntries() requires a single iterable argument");
   return r;
 }
-function wt() {
+function It() {
   var t = function(e) {
     this.target = e;
   };
@@ -1248,7 +1248,7 @@ function wt() {
     return this.target;
   }, t.isFallback = !0, t;
 }
-var Ct = function() {
+var wt = function() {
   return typeof WeakRef == "function";
 }, H;
 (function(t) {
@@ -1273,14 +1273,14 @@ var Ne = (
           this.baseUrl = "https://cdn-global.configcat.com";
           break;
       }
-      var l = (a = s == null ? void 0 : s()) !== null && a !== void 0 ? a : new Qt(), f = new it(l), h = new (Ct() ? WeakRef : wt())(f);
+      var l = (a = s == null ? void 0 : s()) !== null && a !== void 0 ? a : new Qt(), f = new it(l), h = new (wt() ? WeakRef : It())(f);
       this.hooks = {
         hooks: f,
         hooksWeakRef: h,
         emit: function(d) {
-          for (var y, A, I = [], w = 1; w < arguments.length; w++)
-            I[w - 1] = arguments[w];
-          return (A = (y = this.hooksWeakRef.deref()) === null || y === void 0 ? void 0 : y.emit.apply(y, vt([d], I))) !== null && A !== void 0 ? A : !1;
+          for (var y, A, C = [], I = 1; I < arguments.length; I++)
+            C[I - 1] = arguments[I];
+          return (A = (y = this.hooksWeakRef.deref()) === null || y === void 0 ? void 0 : y.emit.apply(y, vt([d], C))) !== null && A !== void 0 ? A : !1;
         }
       };
       var g, v;
@@ -1417,9 +1417,9 @@ var rr = (
     }, e.prototype.refreshConfigAsync = function() {
       return this.options.logger.debug("LazyLoadConfigService.refreshConfigAsync() called."), t.prototype.refreshConfigAsync.call(this);
     }, e.prototype.getCacheState = function(r) {
-      return r.isEmpty ? C.NoFlagData : r.isExpired(this.cacheTimeToLiveMs) ? C.HasCachedFlagDataOnly : C.HasUpToDateFlagData;
+      return r.isEmpty ? w.NoFlagData : r.isExpired(this.cacheTimeToLiveMs) ? w.HasCachedFlagDataOnly : w.HasUpToDateFlagData;
     }, e;
-  }(we)
+  }(Ie)
 ), sr = (
   /** @class */
   function(t) {
@@ -1441,7 +1441,7 @@ var rr = (
       }), i;
     }
     return e.prototype.getCacheState = function(r) {
-      return r.isEmpty ? C.NoFlagData : C.HasCachedFlagDataOnly;
+      return r.isEmpty ? w.NoFlagData : w.HasCachedFlagDataOnly;
     }, e.prototype.getConfig = function() {
       return E(this, void 0, void 0, function() {
         return O(this, function(r) {
@@ -1456,7 +1456,7 @@ var rr = (
     }, e.prototype.refreshConfigAsync = function() {
       return this.options.logger.debug("ManualPollService.refreshConfigAsync() called."), t.prototype.refreshConfigAsync.call(this);
     }, e;
-  }(we)
+  }(Ie)
 ), Nt = "<invalid value>", or = "<invalid name>", Le = "<invalid operator>", ar = "<invalid reference>", ur = 10, Lt = (
   /** @class */
   function() {
@@ -1488,7 +1488,7 @@ var rr = (
       var s = "value", o = "values", a = ye(r);
       if (i)
         return this.append("User." + e + " " + a + " [<" + n.length + " hashed " + (n.length === 1 ? s : o) + ">]");
-      var u = Ce(n, ur, function(l) {
+      var u = we(n, ur, function(l) {
         return ", ... <" + l + " more " + (l === 1 ? s : o) + ">";
       });
       return this.append("User." + e + " " + a + " [" + u + "]");
@@ -1810,7 +1810,7 @@ var lt = (
   } catch {
     return null;
   }
-}, Cr = (
+}, fr = (
   /** @class */
   function() {
     function t(e, r, n, i) {
@@ -1819,7 +1819,7 @@ var lt = (
     return t;
   }()
 );
-function fr(t) {
+function hr(t) {
   var e, r = {}, n = "Identifier", i = "Email", s = "Country";
   if (r[n] = (e = t.identifier) !== null && e !== void 0 ? e : "", t.email != null && (r[i] = t.email), t.country != null && (r[s] = t.country), t.custom != null)
     for (var o = [n, i, s], a = 0, u = Object.entries(t.custom); a < u.length; a++) {
@@ -1837,7 +1837,7 @@ var Fe = (
     return Object.defineProperty(t.prototype, "userAttributes", {
       get: function() {
         var e = this.$userAttributes;
-        return e !== void 0 ? e : this.$userAttributes = this.user ? fr(this.user) : null;
+        return e !== void 0 ? e : this.$userAttributes = this.user ? hr(this.user) : null;
       },
       enumerable: !1,
       configurable: !0
@@ -1853,11 +1853,11 @@ var Fe = (
       return i.$userAttributes = n.userAttributes, i.$visitedFlags = n.visitedFlags, i.logBuilder = n.logBuilder, i;
     }, t;
   }()
-), ct = "The current targeting rule is ignored and the evaluation continues with the next rule.", me = "cannot evaluate, User Object is missing", hr = function(t) {
+), ct = "The current targeting rule is ignored and the evaluation continues with the next rule.", me = "cannot evaluate, User Object is missing", gr = function(t) {
   return "cannot evaluate, the User." + t + " attribute is missing";
-}, gr = function(t, e) {
+}, vr = function(t, e) {
   return "cannot evaluate, the User." + t + " attribute is invalid (" + e + ")";
-}, vr = (
+}, dr = (
   /** @class */
   function() {
     function t(e) {
@@ -1872,7 +1872,7 @@ var Fe = (
         var s = void 0, o = void 0;
         if (e != null) {
           var a = r.setting.type;
-          if (a >= 0 && !yr(e, a))
+          if (a >= 0 && !mr(e, a))
             throw new TypeError("The type of a setting must match the type of the specified default value. " + ("Setting's type was " + x[a] + " but the default value's type was " + typeof e + ". ") + ("Please use a default value which corresponds to the setting type " + x[a] + ". ") + "Learn more: https://configcat.com/docs/sdk-reference/js/#setting-type-mapping");
           s = this.evaluateSetting(r), i = s.selectedValue.value, o = typeof i == typeof e;
         } else
@@ -1956,7 +1956,7 @@ var Fe = (
         return n.isMissingUserObjectLogged || (this.logger.userObjectIsMissing(n.key), n.isMissingUserObjectLogged = !0), me;
       var s = e.comparisonAttribute, o = n.userAttributes[s];
       if (o == null || o === "")
-        return this.logger.userObjectAttributeIsMissingCondition(Re(e), n.key, s), hr(s);
+        return this.logger.userObjectAttributeIsMissingCondition(Re(e), n.key, s), gr(s);
       var a, u, l, f;
       switch (e.comparator) {
         case c.TextEquals:
@@ -2000,10 +2000,10 @@ var Fe = (
         case c.NumberLessOrEquals:
         case c.NumberGreater:
         case c.NumberGreaterOrEquals:
-          return l = dr(s, o, e, n.key, this.logger), typeof l != "string" ? this.evaluateNumberRelation(l, e.comparator, e.comparisonValue) : l;
+          return l = pr(s, o, e, n.key, this.logger), typeof l != "string" ? this.evaluateNumberRelation(l, e.comparator, e.comparisonValue) : l;
         case c.DateTimeBefore:
         case c.DateTimeAfter:
-          return l = pr(s, o, e, n.key, this.logger), typeof l != "string" ? this.evaluateDateTimeRelation(l, e.comparisonValue, e.comparator === c.DateTimeBefore) : l;
+          return l = yr(s, o, e, n.key, this.logger), typeof l != "string" ? this.evaluateDateTimeRelation(l, e.comparisonValue, e.comparator === c.DateTimeBefore) : l;
         case c.ArrayContainsAnyOf:
         case c.ArrayNotContainsAnyOf:
           return f = ht(s, o, e, n.key, this.logger), typeof f != "string" ? this.evaluateArrayContainsAnyOf(f, e.comparisonValue, e.comparator === c.ArrayNotContainsAnyOf) : f;
@@ -2112,7 +2112,7 @@ var Fe = (
       var i = e.prerequisiteFlagKey, s = r.settings[i];
       if (r.visitedFlags.push(r.key), r.visitedFlags.indexOf(i) >= 0) {
         r.visitedFlags.push(i);
-        var o = Ce(r.visitedFlags, void 0, void 0, " -> ");
+        var o = we(r.visitedFlags, void 0, void 0, " -> ");
         throw new Error("Circular dependency detected between the following depending flags: " + o + ".");
       }
       var a = Fe.forPrerequisiteFlag(i, s, r);
@@ -2182,13 +2182,13 @@ function ft(t, e, r, n, i) {
   var s;
   return typeof e == "string" && (s = Ae(e.trim())) ? s : de(i, r, n, t, "'" + e + "' is not a valid semantic version");
 }
-function dr(t, e, r, n, i) {
+function pr(t, e, r, n, i) {
   if (typeof e == "number")
     return e;
   var s;
   return typeof e == "string" && (!isNaN(s = Et(e.replace(",", "."))) || e === "NaN") ? s : de(i, r, n, t, "'" + e + "' is not a valid decimal number");
 }
-function pr(t, e, r, n, i) {
+function yr(t, e, r, n, i) {
   if (e instanceof Date)
     return e.getTime() / 1e3;
   if (typeof e == "number")
@@ -2206,7 +2206,7 @@ function ht(t, e, r, n, i) {
   return Ft(s) ? s : de(i, r, n, t, "'" + e + "' is not a valid string array");
 }
 function de(t, e, r, n, i) {
-  return t.userObjectAttributeIsInvalid(Re(e), r, i, n), gr(n, i);
+  return t.userObjectAttributeIsInvalid(Re(e), r, i, n), vr(n, i);
 }
 function Pt(t, e, r, n) {
   return {
@@ -2237,7 +2237,7 @@ function fe(t, e, r, n, i, s, o) {
     return a = o.configJsonIsNotPresentSingle(r, "defaultValue", n).toString(), _(r, n, P(s), i, a);
   var u = e[r];
   if (!u)
-    return a = o.settingEvaluationFailedDueToMissingKey(r, "defaultValue", n, Ce(Object.keys(e))).toString(), _(r, n, P(s), i, a);
+    return a = o.settingEvaluationFailedDueToMissingKey(r, "defaultValue", n, we(Object.keys(e))).toString(), _(r, n, P(s), i, a);
   var l = t.evaluate(n, new Fe(r, u, i, e));
   return Pt(r, l, P(s), i);
 }
@@ -2263,7 +2263,7 @@ function be(t, e, r) {
 function ee(t) {
   return typeof t == "boolean" || typeof t == "string" || typeof t == "number";
 }
-function yr(t, e) {
+function mr(t, e) {
   switch (e) {
     case x.Boolean:
       return typeof t == "boolean";
@@ -2282,7 +2282,7 @@ function Te(t) {
 function P(t) {
   return t ? new Date(t.timestamp) : void 0;
 }
-var mr = (
+var Er = (
   /** @class */
   function() {
     function t() {
@@ -2297,7 +2297,7 @@ var mr = (
       }
       var o = {};
       n = new De(e, r, o);
-      var a = Ct() ? WeakRef : wt();
+      var a = wt() ? WeakRef : It();
       return this.instances[e.sdkKey] = [new a(n), o], [n, !1];
     }, t.prototype.remove = function(e, r) {
       var n = this.instances[e];
@@ -2315,7 +2315,7 @@ var mr = (
       return e;
     }, t;
   }()
-), Y = new mr(), De = (
+), Y = new Er(), De = (
   /** @class */
   function() {
     function t(e, r, n) {
@@ -2326,7 +2326,7 @@ var mr = (
         throw new Error("Invalid 'configCatKernel' value");
       if (!r.configFetcher)
         throw new Error("Invalid 'configCatKernel.configFetcher' value");
-      this.hooks = e.yieldHooks(), e.defaultUser && this.setDefaultUser(e.defaultUser), this.evaluator = new vr(e.logger), ((i = e.flagOverrides) === null || i === void 0 ? void 0 : i.behaviour) !== R.LocalOnly ? this.configService = e instanceof st ? new Jt(r.configFetcher, e) : e instanceof ot ? new sr(r.configFetcher, e) : e instanceof at ? new ir(r.configFetcher, e) : Ue(new Error("Invalid 'options' value")) : this.hooks.emit("clientReady", C.HasLocalOverrideFlagDataOnly), this.suppressFinalize = ae(this, { sdkKey: e.sdkKey, cacheToken: n, configService: this.configService, logger: e.logger });
+      this.hooks = e.yieldHooks(), e.defaultUser && this.setDefaultUser(e.defaultUser), this.evaluator = new dr(e.logger), ((i = e.flagOverrides) === null || i === void 0 ? void 0 : i.behaviour) !== R.LocalOnly ? this.configService = e instanceof st ? new Jt(r.configFetcher, e) : e instanceof ot ? new sr(r.configFetcher, e) : e instanceof at ? new ir(r.configFetcher, e) : Ue(new Error("Invalid 'options' value")) : this.hooks.emit("clientReady", w.HasLocalOverrideFlagDataOnly), this.suppressFinalize = ae(this, { sdkKey: e.sdkKey, cacheToken: n, configService: this.configService, logger: e.logger });
     }
     return Object.defineProperty(t, "instanceCache", {
       get: function() {
@@ -2339,7 +2339,7 @@ var mr = (
       if (!e)
         throw new Error(o);
       var a = r === H.AutoPoll ? st : r === H.ManualPoll ? ot : r === H.LazyLoad ? at : Ue(new Error("Invalid 'pollingMode' value")), u = new a(e, i.sdkType, i.sdkVersion, n, i.defaultCacheFactory, i.eventEmitterFactory);
-      if (((s = u.flagOverrides) === null || s === void 0 ? void 0 : s.behaviour) !== R.LocalOnly && !Er(e, u.baseUrlOverriden))
+      if (((s = u.flagOverrides) === null || s === void 0 ? void 0 : s.behaviour) !== R.LocalOnly && !Or(e, u.baseUrlOverriden))
         throw new Error(o);
       var l = Y.getOrCreate(u, i), f = l[0], h = l[1];
       return h && n && u.logger.clientIsAlreadyCreated(e), f;
@@ -2544,7 +2544,7 @@ var mr = (
       (e = this.configService) === null || e === void 0 || e.setOffline();
     }, t.prototype.waitForReady = function() {
       var e = this.configService;
-      return e ? e.readyPromise : Promise.resolve(C.HasLocalOverrideFlagDataOnly);
+      return e ? e.readyPromise : Promise.resolve(w.HasLocalOverrideFlagDataOnly);
     }, t.prototype.snapshot = function() {
       var e, r, n, i = this, s, o = function() {
         var h = i.options.cache.getInMemory(), g = h.isEmpty ? null : h.config.settings;
@@ -2629,7 +2629,7 @@ var mr = (
   /** @class */
   function() {
     function t(e, r, n) {
-      this.mergedSettings = e, this.remoteConfig = r, this.defaultUser = n.defaultUser, this.evaluator = n.evaluator, this.options = n.options, this.cacheState = r ? n.configService.getCacheState(r) : C.HasLocalOverrideFlagDataOnly;
+      this.mergedSettings = e, this.remoteConfig = r, this.defaultUser = n.defaultUser, this.evaluator = n.evaluator, this.options = n.options, this.cacheState = r ? n.configService.getCacheState(r) : w.HasLocalOverrideFlagDataOnly;
     }
     return Object.defineProperty(t.prototype, "fetchedConfig", {
       get: function() {
@@ -2671,7 +2671,7 @@ var mr = (
     return t;
   }()
 );
-function Er(t, e) {
+function Or(t, e) {
   var r = "configcat-proxy/";
   if (e && t.length > r.length && t.lastIndexOf(r, 0) === 0)
     return !0;
@@ -2715,16 +2715,16 @@ var ae = function(t, e) {
   return ae(t, e);
 };
 Xt();
-function Or(t, e, r, n) {
+function Sr(t, e, r, n) {
   return De.get(t, e, r, n);
 }
-function Nr(t) {
+function kr(t) {
   return new St(t);
 }
-function Lr(t, e, r) {
+function Pr(t, e, r) {
   return new nr(new rr(t, r), e);
 }
-class Sr {
+class Ar {
   handleStateChange(e, r, n) {
     try {
       if (e.readyState === 4) {
@@ -2763,19 +2763,19 @@ class ke {
     this.storage = e;
   }
   static setup(e, r) {
-    const n = (r ?? Ar)();
+    const n = (r ?? br)();
     return n && (e.defaultCacheFactory = (i) => new Ot(new ke(n), i.logger)), e;
   }
   set(e, r) {
-    this.storage.setItem(e, br(r));
+    this.storage.setItem(e, Tr(r));
   }
   get(e) {
     const r = this.storage.getItem(e);
     if (r)
-      return Tr(r);
+      return Cr(r);
   }
 }
-function Ar() {
+function br() {
   const t = "__configcat_localStorage_test";
   try {
     const e = window.localStorage;
@@ -2792,20 +2792,20 @@ function Ar() {
   }
   return null;
 }
-function br(t) {
+function Tr(t) {
   return t = encodeURIComponent(t), t = t.replace(/%([0-9A-F]{2})/g, (e, r) => String.fromCharCode(parseInt(r, 16))), btoa(t);
 }
-function Tr(t) {
+function Cr(t) {
   return t = atob(t), t = t.replace(/[%\x80-\xFF]/g, (e) => "%" + e.charCodeAt(0).toString(16)), decodeURIComponent(t);
 }
-const Ir = "2.2.2", Rr = {
+const Ir = "2.2.2", qr = {
   // Vue's `App.prototype.use` does not play nicely with generic `install` functions, so we resort to using a discriminated union.
   install: (t, e) => {
     const { sdkKey: r, pollingMode: n, clientOptions: i } = e, s = ke.setup({
       sdkType: "ConfigCat-Vue",
       sdkVersion: Ir,
-      configFetcher: new Sr()
-    }), o = Or(
+      configFetcher: new Ar()
+    }), o = Sr(
       r,
       n ?? H.AutoPoll,
       i,
@@ -2817,40 +2817,69 @@ const Ir = "2.2.2", Rr = {
       a.apply(arguments), o.dispose();
     };
   }
-}, Fr = /* @__PURE__ */ Ut({
-  __name: "FeatureWrapper",
-  props: {
-    featureKey: {},
-    userObject: {}
-  },
-  emits: ["flagValueChanged"],
-  setup(t, { emit: e }) {
-    const r = e, n = t, i = Mt(null), s = xt("configCatClient") ?? (() => {
-      throw new Error("ConfigCatPlugin was not installed.");
-    })(), o = () => {
-      const u = s.snapshot().getValue(n.featureKey, !1, n.userObject);
-      i.value !== u && (i.value = u, r("flagValueChanged", u));
+};
+function wr() {
+  return Ut("configCatClient") ?? (() => {
+    throw new Error("ConfigCatPlugin was not installed.");
+  })();
+}
+function Nr(t, e) {
+  const r = Mt(null), n = wr(), i = () => {
+    const o = n.snapshot().getValue(t, !1, e);
+    r.value !== o && (r.value = o);
+  };
+  return xt(() => {
+    console.log("UseConfigCatClient executed onBeforeMounted");
+    const s = n.snapshot(), o = s.cacheState;
+    o == w.HasUpToDateFlagData || o == w.HasLocalOverrideFlagDataOnly ? (r.value = s.getValue(
+      t,
+      !1,
+      e
+    ), n.on("configChanged", i)) : n.getValueAsync(t, !1, e).then((a) => {
+      const u = i;
+      u && (r.value = a, n.on("configChanged", u));
+    });
+  }), Wt(() => {
+    n.off("configChanged", i), console.log("UseConfigCatClient executed onUnmounted");
+  }), {
+    isFeatureFlagEnabled: r
+  };
+}
+const Lr = Vt({
+  setup(t) {
+    const { isFeatureFlagEnabled: e } = Nr(
+      t.featureFlagKey,
+      t.userObject
+    );
+    return {
+      isFeatureFlagEnabled: e
     };
-    return Wt(() => {
-      const a = s.snapshot(), u = a.cacheState;
-      u == C.HasUpToDateFlagData || u == C.HasLocalOverrideFlagDataOnly ? (i.value = a.getValue(
-        n.featureKey,
-        !1,
-        n.userObject
-      ), s.on("configChanged", o)) : s.getValueAsync(n.featureKey, !1, n.userObject).then((l) => {
-        const f = o;
-        f && (i.value = l, s.on("configChanged", f));
-      });
-    }), Vt(() => {
-      s.off("configChanged", o);
-    }), (a, u) => i.value === !0 ? pe(a.$slots, "default", { key: 0 }) : i.value === !1 ? pe(a.$slots, "else", { key: 1 }) : pe(a.$slots, "loading", { key: 2 });
+  },
+  props: {
+    featureFlagKey: {
+      type: String,
+      required: !0
+    },
+    userObject: {
+      type: fr,
+      required: !1
+    }
   }
-});
+}), Rr = (t, e) => {
+  const r = t.__vccOpts || t;
+  for (const [n, i] of e)
+    r[n] = i;
+  return r;
+};
+function Fr(t, e, r, n, i, s) {
+  return t.isFeatureFlagEnabled === !0 ? pe(t.$slots, "default", { key: 0 }) : t.isFeatureFlagEnabled === !1 ? pe(t.$slots, "else", { key: 1 }) : pe(t.$slots, "loading", { key: 2 });
+}
+const Ur = /* @__PURE__ */ Rr(Lr, [["render", Fr]]);
 export {
-  C as ClientCacheState,
-  Rr as ConfigCatPlugin,
+  w as ClientCacheState,
+  qr as ConfigCatPlugin,
   le as DataGovernance,
-  Fr as FeatureWrapper,
+  Ur as FeatureWrapper,
   T as FormattableLogMessage,
   p as LogLevel,
   R as OverrideBehaviour,
@@ -2860,8 +2889,10 @@ export {
   W as SegmentComparator,
   $ as SettingKeyValue,
   x as SettingType,
-  Cr as User,
+  fr as User,
   c as UserComparator,
-  Nr as createConsoleLogger,
-  Lr as createFlagOverridesFromMap
+  kr as createConsoleLogger,
+  Pr as createFlagOverridesFromMap,
+  wr as useConfigCatClient,
+  Nr as useFeatureFlag
 };
