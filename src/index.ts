@@ -6,7 +6,7 @@ export {
 export { default as FeatureWrapper } from "./components/FeatureWrapper.vue";
 // Composables exports
 export { useFeatureFlag } from "./composables/useFeatureFlag";
-export { useConfigCatClient } from "./composables/UseConfigCatClient";
+export { useConfigCatClient } from "./composables/useConfigCatClient";
 
 export {
   createConsoleLogger,

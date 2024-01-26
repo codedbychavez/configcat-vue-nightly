@@ -2,7 +2,7 @@
   <main>
     <h1>Home page</h1>
     <TheWelcome />
-    <NightlyFeatureWrapper feature-flag-key="myFirstFeatureFlag">
+    <FeatureWrapper feature-flag-key="myFirstFeatureFlag">
       <div class="the-new-feature-wrapper">
         <TheNewFeature />
       </div>
@@ -11,15 +11,15 @@
           Sorry this feature is not available
         </div>
       </template>
-    </NightlyFeatureWrapper>
+    </FeatureWrapper>
   </main>
 </template>
 
 <script setup lang="ts">
 import TheWelcome from "../components/TheWelcome.vue";
 import TheNewFeature from "@/components/TheNewFeature.vue";
-// import { FeatureWrapper } from "configcat-vue";
-import NightlyFeatureWrapper from "@/components/NightlyFeatureWrapper.vue";
+import { FeatureWrapper } from "configcat-vue";
+// import NightlyFeatureWrapper from "@/components/NightlyFeatureWrapper.vue";
 </script>
 
 <style scoped>
