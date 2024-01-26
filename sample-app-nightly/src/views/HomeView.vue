@@ -1,5 +1,6 @@
 <template>
   <main>
+    <h1>Home page</h1>
     <TheWelcome />
     <NightlyFeatureWrapper feature-flag-key="myFirstFeatureFlag">
       <div class="the-new-feature-wrapper">

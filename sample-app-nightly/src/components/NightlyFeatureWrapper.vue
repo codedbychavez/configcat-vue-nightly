@@ -9,11 +9,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { User } from "configcat-common";
-import { useConfigCatClient } from "@/composables/UseConfigCatClient";
+import { useFeatureFlag } from "@/composables/UseFeatureFlag";
 
 export default defineComponent({
   setup(props) {
-    const { isFeatureFlagEnabled } = useConfigCatClient(
+    const { isFeatureFlagEnabled } = useFeatureFlag(
       props.featureFlagKey,
       props.userObject
     );
