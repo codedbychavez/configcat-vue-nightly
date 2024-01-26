@@ -17,7 +17,7 @@ test("Can inject the configCatClient provided in the global scope into a compone
   });
 
   const wrapper = mount(TestComponent, {
-    // mock what main.ts is doing
+    // mock what main.ts in a vue app is doing
     global: {
       provide: {
         configCatClient: mockConfigCatClient,
