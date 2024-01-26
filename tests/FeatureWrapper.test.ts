@@ -3,12 +3,16 @@ import { test, expect } from "vitest";
 
 import FeatureWrapper from "../src/components/FeatureWrapper.vue";
 
-test("The default slot should render when the isHidden value is true", () => {
+test("The default slot should render when the isFeatureFlagEnabled value is true", () => {
   const wrapper = mount(FeatureWrapper, {
-    data() {
+    setup() {
+      const isFeatureFlagEnabled = true;
       return {
-        isHidden: true,
+        isFeatureFlagEnabled,
       };
+    },
+    props: {
+      featureFlagKey: "myFirstFeatureFlag",
     },
     slots: {
       default: "<div>the new feature</div>",
@@ -21,10 +25,14 @@ test("The default slot should render when the isHidden value is true", () => {
 
 test("The default slot should not render when the isFeatureFlagEnabled value is false", () => {
   const wrapper = mount(FeatureWrapper, {
-    data() {
+    setup() {
+      const isFeatureFlagEnabled = false;
       return {
-        isHidden: false,
+        isFeatureFlagEnabled,
       };
+    },
+    props: {
+      featureFlagKey: "myFirstFeatureFlag",
     },
     slots: {
       default: "<div>the new feature</div>",
@@ -37,10 +45,14 @@ test("The default slot should not render when the isFeatureFlagEnabled value is 
 
 test("The else slot should render when the isFeatureFlagEnabled value is false", () => {
   const wrapper = mount(FeatureWrapper, {
-    data() {
+    setup() {
+      const isFeatureFlagEnabled = false;
       return {
-        isHidden: false,
+        isFeatureFlagEnabled,
       };
+    },
+    props: {
+      featureFlagKey: "myFirstFeatureFlag",
     },
     slots: {
       else: "<div>feature not enabled</div>",
@@ -53,10 +65,14 @@ test("The else slot should render when the isFeatureFlagEnabled value is false",
 
 test("The loading slot should render when the isFeatureFlagEnabled value is neither true nor false", () => {
   const wrapper = mount(FeatureWrapper, {
-    data() {
+    setup() {
+      const isFeatureFlagEnabled = null;
       return {
-        isHidden: null,
+        isFeatureFlagEnabled,
       };
+    },
+    props: {
+      featureFlagKey: "myFirstFeatureFlag",
     },
     slots: {
       loading: "<div>loading...</div>",
