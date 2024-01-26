@@ -11,6 +11,8 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "configcat-vue": "file:configcat-vue-nightly.tgz",
+    "configcat-common": "^9.2.0",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
