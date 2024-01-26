@@ -1,13 +1,16 @@
 export {
   default as ConfigCatPlugin,
-  type PluginOptions as ConfigCatPluginOptions
-} from './plugins/ConfigCatPlugin';
+  type PluginOptions as ConfigCatPluginOptions,
+} from "./plugins/ConfigCatPlugin";
 
-export { default as FeatureWrapper } from './components/FeatureWrapper.vue';
+export { default as FeatureWrapper } from "./components/FeatureWrapper.vue";
+// Composables exports
+export { useFeatureFlag } from "./composables/useFeatureFlag";
+export { useConfigCatClient } from "./composables/UseConfigCatClient";
 
 export {
   createConsoleLogger,
-  createFlagOverridesFromMap
+  createFlagOverridesFromMap,
 } from "configcat-common";
 
 // These exports should be kept in sync with the exports listed in the section "Public types for end users" of common-js/src/index.ts!
@@ -46,7 +49,7 @@ export type {
   UserAttributeValue,
   FlagOverrides,
   IProvidesHooks,
-  HookEvents
+  HookEvents,
 } from "configcat-common";
 
 export {
